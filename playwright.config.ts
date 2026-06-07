@@ -1,4 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
+import { URLS } from './config/urls';
+
 
 /**
  * Read environment variables from file.
@@ -25,7 +27,7 @@ export default defineConfig({
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-  baseURL: 'https://front.serverest.dev',
+  baseURL: URLS.frontend,
 
   trace: 'on-first-retry',
   screenshot: 'only-on-failure',

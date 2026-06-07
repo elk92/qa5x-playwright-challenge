@@ -1,4 +1,6 @@
 import { APIRequestContext } from '@playwright/test';
+import { URLS } from '../config/urls';
+
 
 export class UsersApi {
   constructor(
@@ -12,7 +14,7 @@ export class UsersApi {
     administrador: string;
   }) {
     return await this.request.post(
-      'https://serverest.dev/usuarios',
+      URLS.users,
       {
         data: userData,
       }
@@ -21,7 +23,7 @@ export class UsersApi {
 
   async getUsers() {
     return await this.request.get(
-      'https://serverest.dev/usuarios'
+      URLS.users
     );
   }
 }

@@ -1,4 +1,6 @@
 import { APIRequestContext } from '@playwright/test';
+import { URLS } from '../config/urls';
+
 
 export class AuthApi {
   constructor(
@@ -9,8 +11,8 @@ export class AuthApi {
     email: string,
     password: string
   ) {
-    return await this.request.post(
-      'https://serverest.dev/login',
+  return await this.request.post(
+  URLS.login,
       {
         data: {
           email,
