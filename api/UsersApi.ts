@@ -1,12 +1,7 @@
-import { APIRequestContext } from '@playwright/test';
 import { URLS } from '../config/urls';
+import { BaseApi } from './BaseApi';
 
-
-export class UsersApi {
-  constructor(
-    private request: APIRequestContext
-  ) {}
-
+export class UsersApi extends BaseApi {
   async createUser(userData: {
     nome: string;
     email: string;
